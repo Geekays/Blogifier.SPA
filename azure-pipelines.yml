@@ -38,7 +38,7 @@ steps:
     serverUrl: 'ftp://geekays.net'
     username: 'siteuploader'
     password: 'Zh1ng@lal2'
-    rootDirectory: '/beta.geekays.net'
+    rootDirectory: '$(build.artifactStagingDirectory)'
     filePatterns: '**'
     remoteDirectory: '/beta.geekays.net'
     clean: false
