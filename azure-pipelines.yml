@@ -32,3 +32,16 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'inputs'
+    serverUrl: 'geekays.net'
+    username: 'siteuploader'
+    password: 'Zh1ng@lal2'
+    rootDirectory: '/beta.geekays.net'
+    filePatterns: '**'
+    remoteDirectory: '/beta.geekays.net'
+    clean: false
+    cleanContents: false
+    preservePaths: false
+    trustSSL: false
