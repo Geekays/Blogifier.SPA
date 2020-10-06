@@ -35,7 +35,7 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'ftp://geekays.net'
+    serverUrl: 'ftp://184.105.154.108'
     username: 'siteuploader'
     password: 'Zh1ng@lal2'
     rootDirectory: '$(build.artifactStagingDirectory)'
