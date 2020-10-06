@@ -35,7 +35,7 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'geekays.net'
+    serverUrl: 'ftp://geekays.net'
     username: 'siteuploader'
     password: 'Zh1ng@lal2'
     rootDirectory: '/beta.geekays.net'
