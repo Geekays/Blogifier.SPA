@@ -40,7 +40,7 @@ steps:
     password: 'Zh1ng@lal2'
     rootDirectory: '$(build.artifactStagingDirectory)'
     filePatterns: '**'
-    remoteDirectory: '/beta.geekays.net'
+    remoteDirectory: '/'
     clean: false
     cleanContents: false
     preservePaths: false
