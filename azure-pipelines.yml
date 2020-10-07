@@ -32,6 +32,12 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+
+- task: ExtractFiles@1
+  inputs:
+    archiveFilePatterns: '$(build.artifactStagingDirectory)/**/*.zip'
+    cleanDestinationFolder: true
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
@@ -41,7 +47,8 @@ steps:
     rootDirectory: '$(build.artifactStagingDirectory)'
     filePatterns: '**'
     remoteDirectory: '/'
-    clean: false
+    clean: true
     cleanContents: false
     preservePaths: false
     trustSSL: false
+
