@@ -38,6 +38,7 @@ steps:
   inputs:
     archiveFilePatterns: '$(build.artifactStagingDirectory)/**/*.zip'
     cleanDestinationFolder: true
+
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
@@ -47,8 +48,8 @@ steps:
     rootDirectory: '$(build.artifactStagingDirectory)'
     filePatterns: '**'
     remoteDirectory: '/'
-    clean: true
-    cleanContents: false
+    clean: false
+    cleanContents: true
     preservePaths: false
     trustSSL: false
 
