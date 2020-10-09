@@ -34,10 +34,6 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
-- task: ExtractFiles@1
-  inputs:
-    archiveFilePatterns: '$(build.artifactStagingDirectory)/**/*.zip'
-    cleanDestinationFolder: true
 
 - task: FtpUpload@2
   inputs:
@@ -53,3 +49,10 @@ steps:
     preservePaths: false
     trustSSL: false
 
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(13afa9ce-5d92-48e6-95a7-6659cc070ce0)'
+    appType: 'webApp'
+    WebAppName: 'geekaysnet'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
